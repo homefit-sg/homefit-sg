@@ -61,9 +61,11 @@
   <footer><div class="wrap footer-row"><a class="brand" href="#top">home<span>fit</span></a><span>Early access for better-informed household matches.</span><a href="#faq">Questions? Read the FAQ</a></div></footer>
   <script>
     // TALLY SETUP: Replace only these two placeholder URLs, then every matching CTA on this page updates automatically.
-    const tallyUrls = { employer: 'https://tally.so/r/jaKEKJ', helper: 'https://tally.so/r/Bzv6a5' };
+    const tallyUrls = { employer: 'https://tally.so/r/jaKEKJ', helper: '/homefit-sg/helper/' };
     document.querySelectorAll('.employer-link').forEach(link => link.href = tallyUrls.employer);
-    document.querySelectorAll('.helper-link').forEach(link => link.href = tallyUrls.helper);
+    document.querySelectorAll('.helper-link').forEach(link => {
+    link.href = tallyUrls.helper;
+    link.removeAttribute('target');  // internal link — open in same tab
     document.querySelectorAll('.faq-item button').forEach(button => button.addEventListener('click', () => { const item = button.parentElement; const isOpen = item.classList.toggle('open'); button.setAttribute('aria-expanded', isOpen); }));
   </script>
 </body>
