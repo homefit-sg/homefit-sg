@@ -30,9 +30,11 @@
     .lang-list { display:flex; flex-direction:column; gap:12px; }
     .lang-btn { display:flex; align-items:center; justify-content:space-between; gap:18px; padding:19px 22px; background:var(--white); border:1px solid var(--line); border-radius:4px; transition:.18s ease; }
     .lang-btn:hover { border-color:var(--forest); transform:translateY(-2px); box-shadow:0 8px 20px rgba(32,94,80,.10); }
+    .lang-btn.recommended { border-color:var(--forest); background:#f4faf6; }
     .lang-name { display:flex; flex-direction:column; gap:3px; }
-    .lang-title { font-weight:600; font-size:1.06rem; }
+    .lang-title { font-weight:600; font-size:1.06rem; display:flex; align-items:center; flex-wrap:wrap; gap:4px; }
     .lang-hint { color:var(--muted); font-size:.86rem; }
+    .badge { background:var(--mint); color:var(--forest); font-size:.68rem; font-weight:700; padding:3px 8px; border-radius:99px; letter-spacing:.03em; text-transform:uppercase; }
     .arrow { color:var(--coral); font-size:1.3rem; line-height:1; transition:transform .18s ease; }
     .lang-btn:hover .arrow { transform:translateX(4px); }
     .footnote { margin-top:40px; color:var(--muted); font-size:.85rem; }
@@ -57,7 +59,7 @@
       <span class="lang-label">Choose your preferred language</span>
 
       <div class="lang-list">
-        <a class="lang-btn" href="https://tally.so/r/Bzv6a5">
+        <a class="lang-btn" id="lang-en" href="https://tally.so/r/Bzv6a5">
           <span class="lang-name">
             <span class="lang-title">🇬🇧 English</span>
             <span class="lang-hint">Continue in English</span>
@@ -65,7 +67,7 @@
           <span class="arrow">→</span>
         </a>
 
-        <a class="lang-btn" href="https://tally.so/r/xXKjdo">
+        <a class="lang-btn" id="lang-tl" href="https://tally.so/r/xXKjdo">
           <span class="lang-name">
             <span class="lang-title">🇵🇭 Tagalog / Filipino</span>
             <span class="lang-hint">Sabihin sa amin kung anong uri ng employer ang hinahanap mo.</span>
@@ -73,7 +75,7 @@
           <span class="arrow">→</span>
         </a>
 
-        <a class="lang-btn" href="https://tally.so/r/XxXrq4">
+        <a class="lang-btn" id="lang-id" href="https://tally.so/r/XxXrq4">
           <span class="lang-name">
             <span class="lang-title">🇮🇩 Bahasa Indonesia</span>
             <span class="lang-hint">Beri tahu kami tipe majikan seperti apa yang Anda cari.</span>
@@ -81,10 +83,10 @@
           <span class="arrow">→</span>
         </a>
 
-        <a class="lang-btn" href="https://tally.so/r/jaNbxR">
+        <a class="lang-btn" id="lang-my" href="https://tally.so/r/jaNbxR">
           <span class="lang-name">
             <span class="lang-title">🇲🇲 Burmese / မြန်မာဘာသာ</span>
-            <span class="lang-hint">သင်ရှာနေသော အလုပ်ရှင်အမျိုးအစားကို ပြောပြပါ။</span>
+            <span class="lang-hint">သင်လိုချင်သော အလုပ်ရှင်အမျိုးအစားကို ပြောပြပါ။</span>
           </span>
           <span class="arrow">→</span>
         </a>
@@ -93,5 +95,40 @@
       <p class="footnote">Your answers are private. We only share them with employers you may match with.</p>
     </div>
   </main>
+
+  <script>
+    (function() {
+      // Map browser language codes to your language button IDs
+      const langMap = {
+        'en': 'lang-en',
+        'tl': 'lang-tl',
+        'fil': 'lang-tl',
+        'id': 'lang-id',
+        'my': 'lang-my'
+      };
+
+      const browserLang = (navigator.language || navigator.userLanguage || 'en')
+        .toLowerCase()
+        .split('-')[0];
+
+      const targetId = langMap[browserLang];
+      if (targetId) {
+        const btn = document.getElementById(targetId);
+        if (btn) {
+          btn.classList.add('recommended');
+          const title = btn.querySelector('.lang-title');
+          if (title) {
+            const badge = document.createElement('span');
+            badge.className = 'badge';
+            badge.textContent = 'Recommended';
+            title.appendChild(badge);
+          }
+          if (window.innerWidth < 600) {
+            btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }
+      }
+    })();
+  </script>
 </body>
 </html>
