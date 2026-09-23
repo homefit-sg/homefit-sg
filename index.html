@@ -60,13 +60,32 @@
   </main>
   <footer><div class="wrap footer-row"><a class="brand" href="#top">home<span>fit</span></a><span>Early access for better-informed household matches.</span><a href="#faq">Questions? Read the FAQ</a></div></footer>
   <script>
-    // TALLY SETUP: Replace only these two placeholder URLs, then every matching CTA on this page updates automatically.
-    const tallyUrls = { employer: 'https://tally.so/r/jaKEKJ', helper: '/homefit-sg/helper/' };
-    document.querySelectorAll('.employer-link').forEach(link => link.href = tallyUrls.employer);
-    document.querySelectorAll('.helper-link').forEach(link => {
-    link.href = tallyUrls.helper;
-    link.removeAttribute('target');  // internal link — open in same tab
-    document.querySelectorAll('.faq-item button').forEach(button => button.addEventListener('click', () => { const item = button.parentElement; const isOpen = item.classList.toggle('open'); button.setAttribute('aria-expanded', isOpen); }));
+    // TALLY SETUP: Replace only these two placeholder URLs.
+  const tallyUrls = { 
+  employer: 'https://tally.so/r/jaKEKJ', 
+  helper: '/homefit-sg/helper/' 
+  };
+
+  // Employer links: external Tally forms — open in new tab
+  document.querySelectorAll('.employer-link').forEach(link => {
+  link.href = tallyUrls.employer;
+  // keep target="_blank" as-is
+  });
+
+  // Helper links: internal /helper page — open in same tab
+  document.querySelectorAll('.helper-link').forEach(link => {
+  link.href = tallyUrls.helper;
+  link.removeAttribute('target');  // remove target="_blank"
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item button').forEach(button => 
+  button.addEventListener('click', () => { 
+    const item = button.parentElement; 
+    const isOpen = item.classList.toggle('open'); 
+    button.setAttribute('aria-expanded', isOpen); 
+  })
+  );
   </script>
 </body>
 </html>
