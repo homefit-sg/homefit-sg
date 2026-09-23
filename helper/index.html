@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tell us what you're looking for in an employer. Takes about 5 minutes and is completely free." />
+  <title>Find an employer who fits you — Homefit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#17312c; --forest:#205e50; --mint:#d9eee5; --cream:#fbf8f1; --sand:#f0e6d3; --coral:#e47657; --line:#d6ded8; --muted:#60716c; --white:#fffdf9; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:var(--cream); font-family:"DM Sans",Arial,sans-serif; line-height:1.5; -webkit-font-smoothing:antialiased; }
+    a { color:inherit; text-decoration:none; }
+    .wrap { width:min(640px, calc(100% - 40px)); margin:auto; }
+    .eyebrow { display:inline-flex; align-items:center; gap:8px; color:var(--forest); font-size:.76rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
+    .eyebrow:before { content:""; width:8px; height:8px; border-radius:50%; background:var(--coral); }
+    h1 { font-family:"DM Serif Display",Georgia,serif; font-weight:400; font-size:clamp(2.3rem,5vw,3.4rem); letter-spacing:-.03em; line-height:1.05; margin:18px 0 18px; }
+    .copy { color:var(--muted); font-size:1.06rem; margin:0; }
+    .site-header { position:sticky; top:0; z-index:10; background:rgba(251,248,241,.91); backdrop-filter:blur(14px); border-bottom:1px solid rgba(214,222,216,.75); }
+    .nav { height:74px; display:flex; align-items:center; justify-content:space-between; }
+    .brand { font-family:"DM Serif Display",Georgia,serif; font-size:1.65rem; letter-spacing:-.05em; }
+    .brand span { color:var(--coral); }
+    .back { color:var(--muted); font-size:.9rem; }
+    .back:hover { color:var(--forest); }
+    main { padding:64px 0 96px; }
+    .meta { color:var(--muted); font-size:.9rem; margin:14px 0 44px; }
+    .lang-label { font-size:.76rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--forest); margin-bottom:16px; display:block; }
+    .lang-list { display:flex; flex-direction:column; gap:12px; }
+    .lang-btn { display:flex; align-items:center; justify-content:space-between; gap:18px; padding:19px 22px; background:var(--white); border:1px solid var(--line); border-radius:4px; transition:.18s ease; }
+    .lang-btn:hover { border-color:var(--forest); transform:translateY(-2px); box-shadow:0 8px 20px rgba(32,94,80,.10); }
+    .lang-name { display:flex; flex-direction:column; gap:3px; }
+    .lang-title { font-weight:600; font-size:1.06rem; }
+    .lang-hint { color:var(--muted); font-size:.86rem; }
+    .arrow { color:var(--coral); font-size:1.3rem; line-height:1; transition:transform .18s ease; }
+    .lang-btn:hover .arrow { transform:translateX(4px); }
+    .footnote { margin-top:40px; color:var(--muted); font-size:.85rem; }
+    @media (max-width:480px) { .wrap{width:min(100% - 30px,640px)} main{padding:44px 0 72px} .lang-btn{padding:17px 18px} }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="/homefit-sg/">home<span>fit</span></a>
+      <a class="back" href="/homefit-sg/">← Back</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="eyebrow">For helpers</div>
+      <h1>Find an employer who fits you.</h1>
+      <p class="copy">Tell us what you’re looking for in an employer — the kind of household, the duties and the working environment that suit you.</p>
+      <p class="meta">Takes about 5 minutes · Free for helpers · No commitment</p>
+
+      <span class="lang-label">Choose your preferred language</span>
+
+      <div class="lang-list">
+        <a class="lang-btn" href="https://tally.so/r/Bzv6a5">
+          <span class="lang-name">
+            <span class="lang-title">🇬🇧 English</span>
+            <span class="lang-hint">Continue in English</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+
+        <a class="lang-btn" href="https://tally.so/r/xXKjdo">
+          <span class="lang-name">
+            <span class="lang-title">🇵🇭 Tagalog / Filipino</span>
+            <span class="lang-hint">Sabihin sa amin kung anong uri ng employer ang hinahanap mo.</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+
+        <a class="lang-btn" href="https://tally.so/r/XxXrq4">
+          <span class="lang-name">
+            <span class="lang-title">🇮🇩 Bahasa Indonesia</span>
+            <span class="lang-hint">Beri tahu kami tipe majikan seperti apa yang Anda cari.</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+
+        <a class="lang-btn" href="https://tally.so/r/jaNbxR">
+          <span class="lang-name">
+            <span class="lang-title">🇲🇲 Burmese / မြန်မာဘာသာ</span>
+            <span class="lang-hint">သင်ရှာနေသော အလုပ်ရှင်အမျိုးအစားကို ပြောပြပါ။</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <p class="footnote">Your answers are private. We only share them with employers you may match with.</p>
+    </div>
+  </main>
+</body>
+</html>
